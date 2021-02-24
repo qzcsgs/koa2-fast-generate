@@ -6,10 +6,10 @@ module.exports = function (tableName, tableKeys) {
 import { formatSql } from '../../../utils/utils'
 
 export default {
-  select${upTableName} () {
+  select${upTableName} ({ page = 1, page_size = 10 }) {
     return new Promise(async (resolve) => {
       try {
-        const sql = 'SELECT * FROM \`t_${tableName}\`'
+        const sql = \`SELECT * FROM \\\`t_${tableName}\\\` ORDER BY id DESC LIMIT \${(page - 1) * page_size},\${page_size}\`
         const ${tableName}s = await query({ sql })
         resolve(${tableName}s)
       } catch (error) {

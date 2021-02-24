@@ -6,8 +6,8 @@ module.exports = function (tableName, tableKeys) {
 import { success, error } from '../../../utils/response'
 
 export default {
-  async select${upTableName} () {
-    const ${tableName}s = await ${tableName}Db.select${upTableName}()
+  async select${upTableName} ({ page, page_size }) {
+    const ${tableName}s = await ${tableName}Db.select${upTableName}({ page, page_size })
     return ${tableName}s ? success(${tableName}s) : error()
   },
   async insert${upTableName} ({ ${noIdTableKeys.join(', ')} }) {
