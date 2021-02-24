@@ -6,6 +6,7 @@ const service = require('./service')
 const tableName = 'demo'
 const tableKeys = ['id', 'title', 'content', 'create_time', 'update_time']
 const mkdirPath = [
+  './dist',
   `./dist/${tableName}`,
   `./dist/${tableName}/controller`,
   `./dist/${tableName}/db`,
